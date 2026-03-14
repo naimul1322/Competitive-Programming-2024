@@ -1,15 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
-char s[10000001];
 
 int main()
 {
-   cin>>s;
-   int len=strlen(s);
-   int sum=0;
-   for(int i=0; i<len; i++)
-   {
-       sum+=(s[i]-'0');
-   }
-   cout<<sum<<endl;
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=i; j++)
+        {
+            cout<<"*"<<" ";
+        }
+        cout<<endl;
+    }
+    for(int i=n-1; i>=1; i--)
+    {
+        for(int j=1; j<=i; j++)
+        {
+            cout<<"#"<<" ";
+        }
+        cout<<endl;
+    }
+
 }

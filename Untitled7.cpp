@@ -3,16 +3,28 @@ using namespace std;
 
 int main()
 {
-    char ch[20];
-    cin>>ch;
-    int len=0;
-    while(ch[len]!='\0') len++;
-    for (int i=0; i<len/2; i++)
+    string borze;
+    cin >> borze;
+
+    string decoded = "";
+    for (size_t i = 0; i < borze.length(); ++i)
     {
-        char c;
-        c=ch[len-i-1];
-        ch[len-i-1]=ch[i];
-        ch[i]=c;
+        if (borze[i] == '.')
+        {
+            decoded += '0';
+        }
+        else if (borze[i] == '-' && borze[i+1] == '.')
+        {
+            decoded += '1';
+            ++i;
+        }
+        else if (borze[i] == '-' && borze[i+1] == '-')
+        {
+            decoded += '2';
+            ++i;
+        }
     }
-    cout<<ch<<endl;
+    cout<<decoded<<endl;
 }
+
+

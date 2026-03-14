@@ -1,32 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool isPossible(vector<int>& points) {
-    int n = points.size();
-    for (int i = 1; i < n; ++i) {
-        if (points[i] - points[i - 1] <= 2) {
-            return false;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=n-i; j++)
+        {
+            cout<<" ";
         }
-    }
-    return true;
-}
+        for(int j=1; j<=i; j++)
+        {
+            cout<<i;
+        }
+        cout<<endl;
 
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<int> points(n);
-        for (int i = 0; i < n; ++i) {
-            cin >> points[i];
-        }
-        sort(points.begin(), points.end());
-        if (isPossible(points)) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
-        }
     }
-    return 0;
+
+     for(int i=n-1; i>=1; i--)
+    {
+        for(int j=1; j<=n-i; j++)
+        {
+            cout<<" ";
+        }
+        for(int j=1; j<=i; j++)
+        {
+            cout<<i;
+        }
+        cout<<endl;
+
+    }
 }

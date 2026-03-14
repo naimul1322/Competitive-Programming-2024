@@ -7,14 +7,9 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n,k;
-        cin>>n>>k;
-        int ans=n/(k+1);
-        int result=ans*k;
-        int fresult=n-result;
-        cout<<fresult<<endl;
+        int  x;
+        cin>>x;
+        int  r=ceil(100.0/(0.2*x));
+        cout<<r<<endl;
     }
-
 }
-
-
