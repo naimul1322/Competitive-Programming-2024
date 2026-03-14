@@ -128,39 +128,21 @@ void faltu( T arg, const hello &... rest)
 }
 
 
+
+
 int main()
 {
     optimize();
-
-    int t;
-    cin>>t;
-    vector<int> results;
-    while(t--)
-    {
-        int k;
-        cin >> k;
-        int count = 0;
-        int num = 1;
-
-        while (count < k)
-        {
-            if (num % 3 != 0 && num % 10 != 3)
-            {
-                count++;
-            }
-            if (count == k)
-            {
-                results.push_back(num);
-            }
-            num++;
-        }
-    }
-
-    for (int result : results)
-    {
-        cout << result << endl;
-    }
-
+   int n;
+   cin>>n;
+   int fibo[51];
+   fibo[1]=0;
+   fibo[2]=1;
+   for(int i=3; i<=n; i++)
+   {
+       fibo[i]=fibo[i-1]+fibo[i-2];
+   }
+   cout<<fibo[n]<<endl;
 
     return 0;
 }

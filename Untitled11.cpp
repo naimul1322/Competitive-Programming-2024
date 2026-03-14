@@ -7,10 +7,14 @@ int main()
     cin>>t;
     while(t--)
     {
+
+
         int n;
         cin>>n;
-        if(n%3==0) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
-
+        int a=n/2;
+        int b=n-a;
+        cout<<a<<" "<<b<<endl;
     }
+
+
 }

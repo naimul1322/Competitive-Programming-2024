@@ -3,8 +3,12 @@ using namespace std;
 
 int main()
 {
-    int a;
-    cin>>a;
-    int b=~a;
-    cout<<b<<endl;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int x,y;
+        cin>>x>>y;
+        cout<<x-y<<endl;
+    }
 }

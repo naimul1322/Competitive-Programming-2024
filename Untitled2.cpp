@@ -3,11 +3,13 @@ using namespace std;
 
 int main()
 {
-    int w;
-    cin>>w;
-    if(w>2 && w%2==0)
+    int n;
+    cin>>n;
+    string s="L";
+    for(int i=0; i<n; i++)
     {
-        cout<<"Yes"<<endl;
+        s+="o";
     }
-    else cout<<"No"<<endl;
+    s+="ng";
+    cout<<s<<endl;
 }

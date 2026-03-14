@@ -131,35 +131,23 @@ void faltu( T arg, const hello &... rest)
 int main()
 {
     optimize();
-
-    int t;
-    cin>>t;
-    vector<int> results;
-    while(t--)
+    int n;
+    cin>>n;
+    int a,b;
+    int cpass=0;
+    int mx=0;
+    for(int i=0; i<n; i++)
     {
-        int k;
-        cin >> k;
-        int count = 0;
-        int num = 1;
-
-        while (count < k)
+        cin>>a>>b;
+        cpass-=a;
+        cpass+=b;
+        if(cpass>mx)
         {
-            if (num % 3 != 0 && num % 10 != 3)
-            {
-                count++;
-            }
-            if (count == k)
-            {
-                results.push_back(num);
-            }
-            num++;
+            mx=cpass;
         }
     }
+    cout<<mx<<endl;
 
-    for (int result : results)
-    {
-        cout << result << endl;
-    }
 
 
     return 0;

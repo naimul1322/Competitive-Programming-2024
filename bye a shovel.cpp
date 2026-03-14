@@ -126,40 +126,38 @@ void faltu( T arg, const hello &... rest)
     cerr << arg << ' ';
     faltu(rest...);
 }
-
+const int mx=1e4+123;
+int a[mx];
 
 int main()
 {
     optimize();
-
-    int t;
-    cin>>t;
-    vector<int> results;
-    while(t--)
+    int n;
+    cin>>n;
+    int cntm=0,cntc=0;
+    for(int i=1; i<=n; i++)
     {
-        int k;
-        cin >> k;
-        int count = 0;
-        int num = 1;
-
-        while (count < k)
+        int m,c;
+        cin>>m>>c;
+        if(m>c)
         {
-            if (num % 3 != 0 && num % 10 != 3)
-            {
-                count++;
-            }
-            if (count == k)
-            {
-                results.push_back(num);
-            }
-            num++;
+            cntm++;
+        }
+        else if(c>m)
+        {
+            cntc++;
         }
     }
-
-    for (int result : results)
+    if(cntm>cntc)
     {
-        cout << result << endl;
+        cout<<"Mishka"<<endl;
     }
+    else if(cntc>cntm)
+    {
+        cout<<"Chris"<<endl;
+    }
+    else cout<<"Friendship is magic!^^"<<endl;
+
 
 
     return 0;

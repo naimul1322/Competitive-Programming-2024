@@ -7,13 +7,9 @@ int main()
     cin>>t;
     while(t--)
     {
-       string s;
-       cin>>s;
-       for(int i=s.size()-1; i>=0; i--)
-       {
-           cout<<s[i];
-           if(i>0) cout<<" ";
-       }
-       cout<<endl;
+        int a,b;
+        cin>>a>>b;
+        if(a<=b) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
     }
 }

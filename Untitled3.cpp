@@ -1,27 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
+const int mx=1e4+123;
+int a[mx];
 
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int x,y;
-        int sum=0;
-        cin>>x>>y;
-        if(x>y)
-        {
-            swap(x,y);
-        }
-        for(int i=x+1; i<y; i++)
-        {
-            if(i%2 !=0)
-            {
-                sum+=i;
-            }
+    int n,x;
+    cin>>n>>x;
+    for(int i=1; i<=n; i++) cin>>a[i];
+    int sum=0;
 
+    for(int i=1; i<=n;i++)
+    {
+        if(a[i]<=x){
+            sum+=a[i];
         }
-        cout<<sum<<endl;
     }
+    cout<<sum<<endl;
 }
