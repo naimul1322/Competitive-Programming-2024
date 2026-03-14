@@ -1,26 +1,52 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int mx=1e5+123;
-long long a[mx];
 
 int main()
-{
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n;
-        cin>>n;
-        int cnt=0;
-        for(long long i=1; i<=n; i++) cin>>a[i];
 
-        for(long long i=1; i<=n; i++ )
-        {
-            if(a[i]%2 !=0){
-                cnt++;
-            }
-        }
-        cout<<cnt<<endl;
+{
+
+ios::sync_with_stdio(false);
+
+cin.tie(nullptr);
+
+
+
+long long a,b,c,d,ans=0;
+
+cin>>a>>b>>c>>d;
+
+for(int i=c+1;i<=b+c;i++)
+
+{
+
+    long long result;
+
+    if(i-b>=b)
+
+    {
+
+        result=min(b-a,c-(i-b))+1;
 
     }
+
+    else
+
+    {
+
+        result=min(c-b,(i-b)-a)+1;
+
+    }
+
+    if(result<0)
+
+        result=0;
+
+    ans+=result*(min(d-c+1,i-c));
+
 }
+
+cout<<ans<<endl;
+
+
+}
+
