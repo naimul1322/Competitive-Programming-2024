@@ -2,6 +2,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+#define MOD 1000000007
 #define endl "\n"
 const int mx=1e5+123;
 int a[mx],sum[mx];
@@ -9,25 +10,24 @@ int a[mx],sum[mx];
 int main()
 {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    cin.tie(NULL); cout.tie(NULL);
     //cout<<fixed<<setprecision(2);
     int n;
     cin>>n;
-    for(int i=0; i<n; i++) cin>>a[i];
-    for(int i=0; i<n; i++)
+    for(int i=1; i<=n; i++)
     {
-        sum[i]=sum[i-1]+a[i];
+        cin>>a[i];
     }
-    int q;
-    cin>>q;
-    while(q--)
+    sum[0]=1;
+    for(int i=1; i<=n; i++)
     {
-        int l,r;
-        cin>>l>>r;
-        cout<<sum[r]-sum[l-1]<<endl;
+        sum[i]=(sum[i-1]*a[i])%MOD;
     }
-
+    for(int i=1; i<=n; i++)
+    {
+        cout<<sum[i]<<" ";
+    }
+    cout<<endl;
 
 
 }

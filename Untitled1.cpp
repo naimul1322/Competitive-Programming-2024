@@ -1,24 +1,32 @@
+/// In the name of ALLAH
+
 #include<bits/stdc++.h>
 using namespace std;
+#define endl "\n"
+const int mx=2e5+123;
+long long a[mx],psum[mx];
 
 int main()
 {
-    int n;
-    cin>>n;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    //cout<<fixed<<setprecision(2);
+    int n,q;
+    cin>>n>>q;
+    for(int i=1; i<=n; i++) cin>>a[i];
     for(int i=1; i<=n; i++)
     {
-        for(int j=1; j<=i; j++)
-        {
-            cout<<j%2<<" ";
-        }
-        cout<<endl;
+        psum[i]=psum[i-1]+a[i];
     }
-    for(int i=n-1; i>=1; i--)
+
+    while(q--)
     {
-        for(int j=1; j<=i; j++)
-        {
-            cout<<j%2<<" " ;
-        }
-        cout<<endl;
+        int l,r;
+        cin>>l>>r;
+        cout<<(psum[r]-psum[l-1])<<endl;
     }
+
+
 }
+
