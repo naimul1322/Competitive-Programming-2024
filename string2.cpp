@@ -6,7 +6,8 @@ int main()
     int n;
     cin>>n;
     int g=0;
-    for(int i=0, x; i<n; i++)
+    int x;
+    for(int i=1; i<=n; i++)
     {
         cin>>x;
         g=__gcd(g,x);

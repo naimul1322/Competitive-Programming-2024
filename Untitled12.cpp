@@ -5,25 +5,23 @@ int main()
 {
     int t;
     cin>>t;
-
     while(t--)
     {
-        char str[1000001];
-        cin>>str;
+        string s;
+        cin>>s;
         bool ans=false;
-        for(int i=2; str[i]!='\0'; i++)
+        for(int i=0; i<s.size(); i++)
         {
-            if(str[i-2]=='0' && str[i-1]=='1' && str[i]=='0')
+             if(s[i-2]=='0' && s[i-1]=='1' && s[i]=='0')
             {
                 ans=true;
             }
-            else if(str[i-2]=='1' && str[i-1]=='0' && str[i]=='1')
+            else if(s[i-2]=='1' && s[i-1]=='0' && s[i]=='1')
             {
                 ans=true;
             }
         }
         if(ans) cout<<"Good"<<endl;
         else cout<<"Bad"<<endl;
-
     }
 }

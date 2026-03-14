@@ -3,12 +3,14 @@ using namespace std;
 
 int main()
 {
-    int l,r;
-    cin>>l>>r;
-    l--;
-    r--;
     string s;
     cin>>s;
-    reverse(s.begin()+l,s.begin()+r+1);
+    char c;
+ int     len=0;
+    while(s[len]!='\0') len++;
+    s=s[0];
+    s[0]=s[len-1];
+    s[len-1]=s;
+
     cout<<s<<endl;
 }

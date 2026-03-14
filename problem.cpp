@@ -3,14 +3,18 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin>>n;
-    int sum=0;
-    while(n!=0)
+    int t;
+    cin>>t;
+    while(t--)
     {
-        int a=n%10;
-        n/=10;
-        sum+=a;
+        int n,k;
+        cin>>n>>k;
+        int ans=n/(k+1);
+        int result=ans*k;
+        int fresult=n-result;
+        cout<<fresult<<endl;
     }
-    cout<<sum<<endl;
+
 }
+
+

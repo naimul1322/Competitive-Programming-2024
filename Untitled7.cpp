@@ -1,17 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int power(int n)
-{
-    return  n*n*n;
-}
-
 int main()
 {
-    int n;
-    cin>>n;
-    int a=power(n);
-    if(a==n) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
-
+    char ch[20];
+    cin>>ch;
+    int len=0;
+    while(ch[len]!='\0') len++;
+    for (int i=0; i<len/2; i++)
+    {
+        char c;
+        c=ch[len-i-1];
+        ch[len-i-1]=ch[i];
+        ch[i]=c;
+    }
+    cout<<ch<<endl;
 }
