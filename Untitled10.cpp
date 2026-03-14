@@ -1,19 +1,24 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int n,m,a;
-    cin>>n>>m>>a;
-    if(n>=m && n>=a)
-    {
-        cout<<n<<endl;
+    int n;
+    cin>>n;
+    int a[n*4+1];
+    int cnt[n+1]={};
+    for(int i=0; i<n*4-1; i++ ) {
+        cin>>a[i];
+        cnt[a[i]]++;
     }
-    else if(m>=n && m>=a)
+    int ans;
+    for(int i=0; i<n*4-1; i++)
     {
-        cout<<m<<endl;
+        if(cnt[i]==3)
+        {
+            ans=i;
+            break;
+        }
     }
-    else
-    {
-        cout<<a<<endl;
-    }
+    cout<<ans<<endl;
 }

@@ -5,17 +5,10 @@ int main()
 {
     int n;
     cin>>n;
-    vector<long long> v;
-    for(int i=0; i<n; i++)
-    {
-        int a;
-        cin>>a;
-        v.push_back(a);
+    int a[n];
+    for(int i=0; i<n; i++) cin>>a[i];
+
+    for(int i=n-1; i>=0; i--){
+        cout<<a[i]<<" ";
     }
-    reverse(v.begin(),v.end());
-    for(int i=0; i<n; i++)
-    {
-        cout<<v[i]<<" ";
-    }
-    cout<<endl;
 }

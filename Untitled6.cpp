@@ -1,15 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
+const int mx=1e4+123;
+int a[mx];
 
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
+    int n;
+    cin>>n;
+    for(int i=1; i<=n; i++) cin>>a[i];
+    int sum=0;
+    int sub=0;
+    for(int i=1; i<=n; i++)
     {
-        int a,b;
-        cin>>a>>b;
-        if(a<=b) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
+        if(a[i+2]%2==0)
+        {
+            sum+=a[i];
+        }
+        else sub+=a[i];
     }
+    cout<<sum<<" "<<sub<<endl;
+
 }

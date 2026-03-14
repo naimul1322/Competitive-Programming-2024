@@ -5,11 +5,17 @@ int main()
 {
     int n;
     cin>>n;
-    string s="L";
+    int a[n];
     for(int i=0; i<n; i++)
     {
-        s+="o";
+        cin>>a[i];
     }
-    s+="ng";
-    cout<<s<<endl;
+    int sum=0;
+    for(int i=0; i<n; i++)
+    {
+        if(i%2==0){
+            sum+=a[i];
+        }
+    }
+    cout<<sum<<endl;
 }
