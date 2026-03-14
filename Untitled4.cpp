@@ -1,19 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
+const int mx=1e5+123;
+int a[mx];
 
 int main()
 {
     int n;
     cin>>n;
-    int a[n];
-    for(int i=0; i<n; i++) cin>>a[i];
     int sum=0;
-    int sub=0;
-    for(int i=0; i<n; i++)
+    for(int i=1; i<=n; i++) cin>>a[i];
+    for(int i=1; i<n; i++)
     {
-        if(i%2==0) sum+=a[i];
-        else sub+=a[i];
+        sum+=a[i];
+        if(a[i]==a[i+7]){
+            cout<<sum<<" ";
+            break;
+        }
     }
 
-    cout<<sum-sub<<endl;
 }

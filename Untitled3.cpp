@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 const int mx=1e4+123;
 int a[mx];
 
@@ -8,17 +7,13 @@ int main()
 {
     int n;
     cin>>n;
-    bool istrue=false;
-    for(int i=1; i<=n; i++) cin>>a[i];
-    for(int i=1; i<=n; i++)
+    for(int i=0; i<n; i++) cin>>a[i];
+    int sum=0;
+    for(int i=0; i<n; i++)
     {
-        if(a[i]==a[i+1]==a[i+2]=='w')
-        {
-            cout<<"M"<<endl;
-            istrue=true;
+        if(i%2!=0){
+            sum+=a[i];
         }
-
     }
-    if(!istrue) cout<<"NO M"<<endl;
-
+    cout<<sum<<endl;
 }

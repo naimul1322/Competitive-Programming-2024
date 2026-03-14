@@ -1,21 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int n;
-    cin>>n;
-    int a[n];
-    for(int i=0; i<n; i++)
-    {
-        cin>>a[i];
-    }
-    int sum=0;
-    for(int i=0; i<n; i++)
-    {
-        if(i%2==0){
-            sum+=a[i];
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+
+        vector<string> s(6);
+        for (int i = 0; i < 6; i++) {
+            cin >> s[i];
+        }
+
+        bool hattrick = false;
+        for (int i = 0; i < 6; i++) {
+            if (s[i] == "W" && s[i+1] == "W" && s[i+2] == "W") {
+                hattrick = true;
+                break;
+            }
+        }
+
+        if (hattrick) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
         }
     }
-    cout<<sum<<endl;
+
 }
+
